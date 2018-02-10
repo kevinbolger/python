@@ -7,8 +7,6 @@ Yes, I know. The SKLearn Module runs off of Fortran binaries. Why have I done th
 Link to [slr.py](https://github.com/kevinbolger/python/blob/master/dataAlgorithms/slr.py)
 
 {% highlight python %}
-code(
 def helloWorl():
 	print "Hello, World!";
-)
 {% endhighlight %}
