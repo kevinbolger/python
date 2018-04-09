@@ -1,4 +1,4 @@
-# randomAry.py by Kevin Bolger
+# randomArt.py by Kevin Bolger
 
 The python function defined above can be used to generate a random piece of abstract art, that would undoubtedly be the envy of the greatest artists.
 
