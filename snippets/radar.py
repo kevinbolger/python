@@ -1,7 +1,29 @@
-from numpy import log
+##################################################
+# radar.py uses the plotly library
+# The concept developed here plots values from an
+# analytical observation vs the mean and mean +/-
+# 3 standard deviations (upper and lower control
+# limits for a single observation across many values.
+# The intended use is in the comparison of analytical
+# samples in comparison to historical data to ensure
+# sample matches expected behaviour. The data should
+# be normalised to the ucl and lcl values and scaled
+# so the ucl and lcl values are 20 and 10 respectively.
+# This means if a sample is 'good' or 'comparable, the 
+# radar profile will take a circular shape. While a sample
+# with results which are atypical will result in a 
+# skewed/distorted shape. However, while I describe
+# a specific application, the concept can be deployed in
+# a variety of situations.
+#
+# MIT License
+# Please attribute: kevinbolger
+##################################################
+
 import plotly.graph_objs as go
 from plotly.offline import plot
 
+# Defining a function which templates my radar charts for me.
 def myRadar(r, theta, name, fill = 'toself', color = 'blue', subplot = 'polar', dash = 'solid'):
     fig = go.Scatterpolar(
         r = r,
@@ -50,8 +72,7 @@ layout = {
   }, 
   "polar2": {
     "radialaxis": {
-      "autorange": True, 
-      "range": [log(2),log(4)], 
+      "autorange": True,
       "type": "log"
   },
   'domain': {
