@@ -1,4 +1,5 @@
 import numpy as np
+import operator
 
 class nearest_neighbors:
 	
@@ -14,5 +15,5 @@ class nearest_neighbors:
 		for i in range(k):
 			votelabel = self.labels[i]
 			votes[votelabel] = votes.get(votelabel,0) + 1
-		sortedVotes = sorted(votes.iteritems())
+		sortedVotes = sorted(votes.iteritems(), key = operator.itemgetter(1), reverse=True)
 		return sortedVotes[0][0]
